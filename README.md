@@ -6,7 +6,6 @@ calorie.ninja.api.py is a Python-based nutrition calculator that analyzes food i
 
 - Get nutrition facts (calories, protein, carbs, fat) for any food
 - Save favorite foods for quick access
-- Data persists between uses
 - Simple command-line interface
 
 # Requirements
