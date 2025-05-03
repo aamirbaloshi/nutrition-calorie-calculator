@@ -2,9 +2,11 @@ import requests
 import json
 import os
 
+# File handling setup
 FAVORITES_FILE = "nutrition_favorites.json"
 
 def load_favorites():
+    """Load favorites from JSON file."""
     if os.path.exists(FAVORITES_FILE):
         try:
             with open(FAVORITES_FILE, 'r') as f:
@@ -84,13 +86,13 @@ def manage_favorites(data):
 
 def main():
     API_KEY = "+UAZGtttO6YjFV8HlrKiBg==GG6PbNeSh3rUqUqS"
-    current_data = None 
+    current_data = None  
     
     if not os.path.exists(FAVORITES_FILE):
         save_favorites([])
     
     while True:
-        print("\n==== NUTRITION_CALORIE_CALCULATOR ====")
+        print("\n==== Nutrition Finder ====")
         print("1. Get nutrition information")
         print("2. Favorites menu")
         print("3. Exit")
@@ -104,14 +106,13 @@ def main():
                 print_nutrition(current_data)
         
         elif choice == '2':
-            
             manage_favorites({
                 'current': current_data,
                 'saved': {'items': load_favorites()}
             })
         
         elif choice == '3':
-            print("Thank you!")
+            print("Goodbye!")
             break
         
         else:
