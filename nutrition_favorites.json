@@ -1,0 +1,30 @@
+[
+  {
+    "name": "chicken salad",
+    "calories": 231.4,
+    "serving_size_g": 100.0,
+    "fat_total_g": 15.9,
+    "fat_saturated_g": 3.6,
+    "protein_g": 17.1,
+    "sodium_mg": 202,
+    "potassium_mg": 131,
+    "cholesterol_mg": 56,
+    "carbohydrates_total_g": 2.9,
+    "fiber_g": 0.3,
+    "sugar_g": 2.2
+  },
+  {
+    "name": "pepsi",
+    "calories": 42.9,
+    "serving_size_g": 100.0,
+    "fat_total_g": 0.0,
+    "fat_saturated_g": 0.0,
+    "protein_g": 0.0,
+    "sodium_mg": 8,
+    "potassium_mg": 0,
+    "cholesterol_mg": 0,
+    "carbohydrates_total_g": 11.3,
+    "fiber_g": 0.0,
+    "sugar_g": 11.6
+  }
+]
