@@ -2,11 +2,9 @@ import requests
 import json
 import os
 
-# File handling setup
 FAVORITES_FILE = "nutrition_favorites.json"
 
 def load_favorites():
-    """Load favorites from JSON file."""
     if os.path.exists(FAVORITES_FILE):
         try:
             with open(FAVORITES_FILE, 'r') as f:
@@ -16,12 +14,10 @@ def load_favorites():
     return []
 
 def save_favorites(favorites):
-    """Save favorites to JSON file."""
     with open(FAVORITES_FILE, 'w') as f:
         json.dump(favorites, f, indent=2)
 
 def get_nutrition_info(api_key, query):
-    """Fetch nutrition data from API."""
     api_url = 'https://api.calorieninjas.com/v1/nutrition?query='
     headers = {'X-Api-Key': api_key}
 
@@ -36,7 +32,6 @@ def get_nutrition_info(api_key, query):
     return None
 
 def print_nutrition(data):
-    """Display nutrition information."""
     if not data or 'items' not in data or len(data['items']) == 0:
         print("No nutrition information found.")
         return
@@ -49,7 +44,6 @@ def print_nutrition(data):
         print(f"Fat: {item.get('fat_total_g', 'N/A')}g")
 
 def manage_favorites(data):
-    """Improved Favorites management system with better feedback."""
     favorites = load_favorites()
     current_items = data.get('current', {}).get('items', []) if data.get('current') else []
     
@@ -90,9 +84,8 @@ def manage_favorites(data):
 
 def main():
     API_KEY = "+UAZGtttO6YjFV8HlrKiBg==GG6PbNeSh3rUqUqS"
-    current_data = None  # Store the last fetched nutrition data
+    current_data = None 
     
-    # Initialize favorites file if it doesn't exist
     if not os.path.exists(FAVORITES_FILE):
         save_favorites([])
     
@@ -111,7 +104,7 @@ def main():
                 print_nutrition(current_data)
         
         elif choice == '2':
-            # Pass both current data and favorites
+            
             manage_favorites({
                 'current': current_data,
                 'saved': {'items': load_favorites()}
